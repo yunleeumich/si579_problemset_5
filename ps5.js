@@ -99,7 +99,6 @@ showRhymesBtn.addEventListener("click", rhymingWrodClick);
 
 function rhymingWrodClick (event) {
     
-    const word_list = []
 
     fetch("https://api.datamuse.com/words?rel_rhy=" + textOutput.textContent)
     .then(res => res.json())
@@ -146,7 +145,7 @@ showSynonymsBtn.addEventListener("click", function(event) {
     // ADD A CONDITION TO MAKE SURE THE INPUT IS NOT EMPTY
     if (newInitialWordInput) {
         textOutput.textContent = newInitialWordInput;
-        savedElement.innerHTML = `<span>${newInitialWordInput}</span>`;
+        // savedElement.innerHTML = `<span>${newInitialWordInput}</span>`;
         initialWordInput.value = "";
         initialWordInput.blur();
 
