@@ -84,7 +84,7 @@ showRhymesBtn.addEventListener("click", function(event) {
     if (newInitialWordInput) {
         textOutput.textContent = newInitialWordInput;
         // savedElement.innerHTML = `<span>${newInitialWordInput}</span>`;
-        savedElement.innerHTML = `<span>(none)</span>`;
+        // savedElement.innerHTML = `<span>(none)</span>`;
         initialWordInput.value = "";
         initialWordInput.blur();
 
@@ -111,13 +111,10 @@ function rhymingWrodClick (event) {
             textOutput.innerHTML = '';
             datas = groupBy(data, "numSyllables");
             for (let group in datas) {
-                // console.log(group);
                 let groupTitle = document.createElement("h3");
                 groupTitle.innerText = `${group} syllable${addS(Number(group))}:`;
-                console.log(groupTitle);
                 let rhymesOutput = document.createElement("ul");
                 for (let ele of datas[group]) {
-                    console.log(ele);
                     const li = document.createElement('li');
                     li.innerText = ele["word"];
                     const btn = document.createElement("button");
@@ -138,6 +135,7 @@ function rhymingWrodClick (event) {
 
 
 
+
 // // Synonyms
 showSynonymsBtn.addEventListener("click", function(event) {
     const newInitialWordInput = initialWordInput.value.trim().toLowerCase();
@@ -145,7 +143,6 @@ showSynonymsBtn.addEventListener("click", function(event) {
     // ADD A CONDITION TO MAKE SURE THE INPUT IS NOT EMPTY
     if (newInitialWordInput) {
         textOutput.textContent = newInitialWordInput;
-        // savedElement.innerHTML = `<span>${newInitialWordInput}</span>`;
         initialWordInput.value = "";
         initialWordInput.blur();
 
@@ -172,7 +169,7 @@ function SynonymsWrodClick (event) {
             textOutput.innerHTML = '';
             let rhymesOutput = document.createElement("ul");
             for (let ele in data) {
-                console.log(data[ele]['word']);
+                // console.log(data[ele]['word']);
                 const li = document.createElement('li');
                 li.innerText = data[ele]["word"];
                 const btn = document.createElement("button");
